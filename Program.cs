@@ -16,6 +16,7 @@ class Program
         string baselineFile = cli.GetString() ?? "baseline.md";
 
         string actions = ExtractPageActions(url);
+        Console.WriteLine(actions);
 
         if (File.Exists(baselineFile))
         {
@@ -23,10 +24,8 @@ class Program
 
             if (baseline != actions)
             {
+                Console.WriteLine();
                 Console.WriteLine("DIFFERENCE FOUND!");
-                Console.WriteLine();
-                Console.WriteLine(actions);
-                Console.WriteLine();
 
                 if (!save)
                 {
@@ -35,9 +34,8 @@ class Program
             }
             else
             {
-                Console.WriteLine("NO DIFFERENCES FROM BASELINE");
                 Console.WriteLine();
-                Console.WriteLine(actions);
+                Console.WriteLine("NO DIFFERENCES FROM BASELINE");
             }
         }
 
