@@ -15,12 +15,12 @@ class Program
         bool save = cli.GetBoolean("save") ?? false;
         string baselineFile = cli.GetString() ?? "baseline.md";
 
-        string actions = ExtractPageActions(url);
+        string actions = ExtractPageActions(url).ReplaceLineEndings("\n");
         Console.WriteLine(actions);
 
         if (File.Exists(baselineFile))
         {
-            string baseline = File.ReadAllText(baselineFile);
+            string baseline = File.ReadAllText(baselineFile).ReplaceLineEndings("\n");
 
             if (baseline != actions)
             {
