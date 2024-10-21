@@ -9,7 +9,7 @@ on:
   pull_request:
     branches: [ "main" ]
   schedule:
-    - cron: '0 19 * * *' # ~Noon PDT
+    - cron: '50 18 * * *' # ~11:50am PDT for completion 12:00-12:10pm PDT
   workflow_dispatch:
 
 jobs:
