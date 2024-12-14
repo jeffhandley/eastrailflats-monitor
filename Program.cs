@@ -72,7 +72,7 @@ class Program
     {
         TimeZoneInfo timeZone = TimeZoneInfo.FindSystemTimeZoneById("Pacific Standard Time");
         DateTime currentTime = TimeZoneInfo.ConvertTime(DateTime.Now, timeZone);
-        string formattedTime = currentTime.ToString("yyyy-MM-dd HH:mm:ss");
+        string formattedTime = currentTime.ToString("MMMM d");
 
         TwilioClient.Init(accountSid, authToken);
 
